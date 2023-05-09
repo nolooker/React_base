@@ -1,39 +1,52 @@
-import {Component} from 'react' ;
+function App() {
+	const ClickEvent01 = () => {
+		console.log('안녕하세요~~여러분');
+	}
 
-class App extends Component {
-	
-	ClickTest01 = (first, second) => {
+	const ClickEvent02 = (param) => {
 		
-		var result = `${first}~~${second}`;
-		
-		console.log('결과 : ' + result) ; 
-		
+		var result = `반갑습니다~~${param}님` ;
+		console.log(result);
 	}
 	
-	ClickTest02 = (param, evt) => {
-		// 
-		// if(typeof param != 'string'){param = 'not a string';}
+	const ClickEvent03 = (su01, su02) => {
 		
-		console.log('파라미터 : ' + param) ; /* 넘겨진 파라미터  */
-		console.log('evt.type') ;
-		console.log(evt.type) ; /* event의 유형 */
+		var result = `${su01} + ${su02}는 ${su01 + su02} 입니다.` ;
+		console.log(result);
 	}
 	
-	
-  render(){
-	  
-	  return (
-			<div>
-				<h2>클릭 이벤트</h2>
-				<button onClick={() => this.ClickTest01('hello', 'world')}>매개 변수 2개</button>
-				
-				<button onClick={evt => this.ClickTest02('hello', evt)}>버튼 클릭</button>
-				
-				<a onClick={this.ClickTest02}>버튼 클릭</a>
-			</div>
-	  )
-  }
+	const ClickEvent04 = (param, event) => {
+		
+		/* event는 이벤트 객체라고 합니다. */
+		
+		console.log('파라미터 정보 : ' + param) ;
+		
+		/* 해당 이벤트가 보유하고 있는 프로퍼티 목록을 저장할 배열 */
+		var evt_array = [] ;
+		
+		for (const evt in event) {
+			evt_array.push(evt) ;
+		}
+		
+		console.log(evt_array);
+		console.log('이벤트 타입 : ' + event.type) ;
+	}
 
+  return (
+    <div>
+		<h2>클릭 이벤트</h2>
+		<button onClick={ClickEvent01}>매개 변수 0개</button>
+		<br/>
+		
+		<button onClick={() => ClickEvent02('김규식')}>매개 변수 1개</button>
+		<br/>
+		
+		<button onClick={() => ClickEvent03(14, 5)}>매개 변수 2개</button>
+		<br/>
+		
+		<button onClick={(event) => ClickEvent04('hello', event)}>send event object</button>		
+    </div>
+  );
 }
 
 export default App;
