@@ -2,6 +2,8 @@ import './../App.css';
 import ClickTestComponent from './components/ClickTestFile';
 import ChangeTestComponent from './components/ChangeTestFile';
 import MouseMoveTestComponent from './components/MouseMoveTestFile';
+import KeyEventComponent from './components/KeyEventTestFile';
+import SubmitTestComponent from './components/SubmitTestFile';
 
 function App() {
   return (
@@ -12,6 +14,10 @@ function App() {
 		<ChangeTestComponent/>
 		<hr/>
 		<MouseMoveTestComponent/>
+		<hr/>
+		<KeyEventComponent/>
+		<hr/>
+		<SubmitTestComponent/>
 		<hr/>
 		
     </div>

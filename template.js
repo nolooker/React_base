@@ -1,9 +1,15 @@
-function App(){
-	console.log('');
+function App() {
 	
-	return(
-		<div>안녕하세요.</div>
+	console.log('') ;
+	
+	
+	return (
+		<div>
+			hi
+		</div>
+	
 	);
+
 }
 
-export default App;
+export default App ;
