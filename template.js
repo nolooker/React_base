@@ -1,15 +1,15 @@
+import './../App.css';
+import {useState} from 'react' ;
+
 function App() {
 	
-	console.log('') ;
 	
+  return (
+    <div>
+		
+    </div>
 	
-	return (
-		<div>
-			hi
-		</div>
-	
-	);
-
+  );
+  
 }
-
-export default App ;
+export default App;
