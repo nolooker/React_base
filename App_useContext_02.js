@@ -1,48 +1,37 @@
 import './../App.css';
-import {useState, createContext} from 'react' ;
-import {useContext} from 'react' ;
+import {useState, createContext, useContext} from 'react' ;
 
-const MyCtx = createContext();
+const MyContext = createContext();
 
-function App() {
+function App(){
+	const [member, setMember] = useState('김철수');
 	
-	const [member,setMember] = useState('김철수') ;
-		
-	return (
-	
-	<MyCtx.Provider value={member}>
-	
-		<h1>{`Hello~~${member}~!`}</h1>
-		<Child/>
-    
-	</MyCtx.Provider>
-	
+	return(
+		<MyContext.Provider value={member}>
+			<h1>{`안녕하세요~~${member}님!!`}</h1>
+			<Child/>
+		</MyContext.Provider>
 	);
-  
 }
 
-function Child() {
-	
-	const member = useContext(MyCtx);
-	
-	return (
+/* 함수형 컴포넌트에서 props는 매개 변수 영역에 작성해주면 됩니다. */
+function Child(){
+	return(
 		<>
-			<h1>Child</h1>
-			<GrandChild member = {member} />
+			<h1>여기는 Child입니다.</h1>
+			<GrandChild/>
 		</>
-	); 
+	);
 }
 
-function GrandChild() {
-	
-	const member = useContext(MyCtx);
-	
-	return (
+function GrandChild(){
+	const member = useContext(MyContext) ;
+	return(
 		<>
-			<h1>GrandChild</h1>
-			<h1>{`${member} See U~`}</h1>
+			<h1>여기는 GrandChild입니다.</h1>
+			<h1>{`${member}님~~또 뵙네요.`}</h1>
 		</>
-	); 
+	);
 }
 
-export default App;
+export default App ;
