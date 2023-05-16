@@ -1,6 +1,6 @@
 import {useState} from 'react' ;
 
-import Mart from './NoUseComponents/MartNo';
+import Mart from './noUseComponents/MartNo';
 
 function App(){
 	const [mode, setMode] = useState(''); /* L(엘마트), H(에이치마트) */
@@ -17,33 +17,6 @@ function App(){
 		}
 	}
 	
-	const ProductList = {
-		man:[
-			{name:'셔츠', price:50000}, {name:'청바지', price:70000}
-		],
-		woman:[
-			{name:'블라우스', price:100000}, {name:'원피스', price:200000}
-		]
-	};
-	
-	const [items, setItems] = useState(ProductList);
-	
-	const AddNewProduct = (who, newProduct) => {
-		/* who : man 또는 woman 중 하나 */
-		console.log('AddNewProduct called') ;
-		console.log('newProduct') ;
-		console.log(newProduct) ;
-		
-		if(who==='man'){
-			setItems({...items, man:[...items.man, newProduct]});	
-			
-		}else if(who==='woman'){
-			setItems({...items, woman:[...items.woman, newProduct]});
-		}
-		
-		console.log(newProduct.name + '이(가) 추가되었습니다.') ;
-	}
-	
 	return(
 		<div style={{position:'absolute', top:'10%', left:'10%'}}>
 			<h1>마트 유형 선택 : </h1>{`  `}
@@ -52,16 +25,9 @@ function App(){
 				<option value="L">엘마트</option>
 				<option value="H">에이치마트</option>
 			</select>
-			<Mart mode={mode} items={items} pushData={AddNewProduct}/>
+			<Mart mode={mode}/>
 		</div>
 	);
 }
 
 export default App ;
-
-
-
-
-
-
-
