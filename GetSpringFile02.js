@@ -1,0 +1,83 @@
+import {useState} from 'react';
+import {useEffect} from 'react';
+import axios from 'axios';
+import ListGroup from 'react-bootstrap/ListGroup';
+import {Table} from 'react-bootstrap' ;
+
+function App() {
+	
+	/* 수신 받은 데이터 */
+	const [receivedData, setReceivedData] = useState(null) ;
+	
+	/* 데이터 로딩중이면 true 입니다. */
+	const [loading, setLoading] = useState(false) ;
+	
+	/* 오류 발생 시 정보가 들어있는 예외 객체  */
+	const [error, setError] = useState(null) ;
+	
+	useEffect(() => {
+		const fetchData = async () => {
+			try{
+				
+				/* state initialize */
+				setReceivedData(null);
+				setError(null);
+				setLoading(null);
+				
+				const url = 'http://localhost:8989/thymeleaf/rest/ex02';
+				const response = await axios.get(url);
+				
+				setReceivedData(response.data);
+				
+				console.log('response.data');
+				console.log(response.data);
+				
+			}catch(err){
+				
+				setError(err) ;
+				
+			} /* end try...catch */
+			
+			setLoading(false);
+			
+		};	/* end useEffect */
+		
+		
+		fetchData() ; /* called fetchData function */
+		
+	}, []) ; /* end useEffect */
+	
+	if(loading) return <div>데이터 로딩 중입니다.</div>;
+	if(error) return <div>오류가 발생했습니다.</div>;
+	if(!receivedData) return null;
+	
+	const ProductList = () => {
+		const UserList = receivedData.map(onedata => (
+			<tr key={onedata.id}>
+				<td>{onedata.name}</td>
+				<td>{onedata.price}</td>
+				<td>{onedata.description}</td>
+			</tr>
+		));
+		
+		return <tbody>{UserList}</tbody>
+		
+	}
+	
+  return (
+    <div>
+		<Table>
+			<thead>
+				<tr>
+					<th>이름</th>
+					<th>가격</th>
+					<th>설명</th>
+				</tr>
+			</thead>
+			<ProductList/>
+		</Table>
+    </div>
+  );
+}
+
+export default App;
