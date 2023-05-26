@@ -40,7 +40,61 @@ import './index.css';
 
 //import App from './ch05.react_hooks/App_useState_02' ;
 
-import App from './ch05.react_hooks/App_useState_03' ;
+//import App from './ch05.react_hooks/App_useState_03' ;
+
+//import App from './ch05.react_hooks/App_useState_04' ;
+
+//import App from './ch05.react_hooks/App_useEffect_01' ;
+
+//import App from './ch05.react_hooks/App_useEffect_02' ;
+
+//import App from './ch05.react_hooks/App_useContext_01' ;
+
+//import App from './ch05.react_hooks/App_useContext_02' ;
+
+//import App from './ch05.react_hooks/App_useContext_03' ;
+
+//import App from './ch05.react_hooks/noContext01/App_useContext_03No' ;
+
+//import App from './ch05.react_hooks/noContext02/App_useContext_03No' ;
+
+//import App from './ch05.react_hooks/noContext03/App_useContext_03No' ;
+
+//import App from './ch05.react_hooks/yesContext01/App_useContext' ;
+
+//import App from './ch05.react_hooks/yesContext02/App_useContext' ;
+
+//import App from './ch05.react_hooks/yesContext03/App_useContext' ;
+
+//import App from './ch06.bootstrap-exam/coffee_bread_01/App' ;
+
+//import App from './ch06.bootstrap-exam/coffee_bread_02/App' ;
+
+//import App from './ch06.bootstrap-exam/coffee_bread_03/App' ;
+
+//import App from './ch06.bootstrap-exam/coffee_bread_04/App' ;
+
+//import App from './ch06.bootstrap-exam/coffee_bread_05/App' ;
+
+//import App from './ch02.es6_syntax/App_sort_test' ;
+
+//import App from './ch06.bootstrap-exam/coffee_bread_06/App' ;
+
+
+//import App from './ch08.Axios_rechart_chartJs/JsonPlaceholder' ;
+
+//import App from './ch08.Axios_rechart_chartJs/GetSpringBoot01' ;
+
+//import App from './ch08.Axios_rechart_chartJs/GetSpringBoot02' ;
+
+//import App from './ch08.Axios_rechart_chartJs/GetSpringBoot03' ;
+
+//import App from './ch08.Axios_rechart_chartJs/GetSpringBoot04' ;
+
+//import App from './ch08.Axios_rechart_chartJs/GetSpringBoot05' ;
+
+import App from './ch08.Axios_rechart_chartJs/GetSpringBoot11' ;
+
 
 
 import reportWebVitals from './reportWebVitals';
